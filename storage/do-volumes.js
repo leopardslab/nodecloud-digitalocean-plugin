@@ -31,7 +31,7 @@ class Volumes {
    */
   listByID(id) {
     return new Promise((resolve,reject) => {
-      this._client.volumes.get(id, (err,result) => {
+      this._client.volumes.get(id,(err,result) => {
         if (err) reject(err)
         console.log(result)
         resolve(result)
@@ -46,18 +46,9 @@ class Volumes {
    */
   create(params) {
     return new Promise((resolve,reject) => {
-      this._client.volumes.create(params, (err,result) => {
+      this._client.volumes.create(params,(err,result) => {
         if (err) reject(err)
-        if (result.length > 1) {
-          var ids = []
-          for (var i=0; i<result.length; i++) {
-            ids.push(result[i].id)
-          }
-          resolve("Created new volumes with ids: " + ids)
-        }
-        else {
-          resolve("Created a new volume with id: " + result.id)
-        }
+        resolve("Created a new volume with id: " + result.id)
       })
     });
   }
@@ -69,7 +60,7 @@ class Volumes {
    */
   delete(id) {
     return new Promise((resolve,reject) => {
-      this._client.volumes.delete(id, (err,result) => {
+      this._client.volumes.delete(id,(err,result) => {
         if (err) reject(err)
         resolve("Volume with id: " + id + " deleted successfully")
       })
@@ -83,7 +74,7 @@ class Volumes {
    */
   listActions(id) {
     return new Promise((resolve,reject) => {
-      this._client.volumes.listActions(id, (err,result) => {
+      this._client.volumes.listActions(id,(err,result) => {
         if (err) reject(err)
         console.log(result)
         resolve(result)
@@ -99,7 +90,7 @@ class Volumes {
    */
   getAction(id, aid) {
     return new Promise((resolve,reject) => {
-      this._client.volumes.getAction(id, aid, (err,result) => {
+      this._client.volumes.getAction(id,aid,(err,result) => {
         if (err) reject(err)
         console.log(result)
         resolve(result)

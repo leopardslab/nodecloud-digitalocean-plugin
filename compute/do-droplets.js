@@ -31,7 +31,7 @@ class Droplets {
    */
   listByID(id) {
     return new Promise((resolve,reject) => {
-      this._client.droplets.get(id, (err,result) => {
+      this._client.droplets.get(id,(err,result) => {
         if (err) reject(err)
         console.log(result)
         resolve(result)
@@ -46,7 +46,7 @@ class Droplets {
    */
   create(params) {
     return new Promise((resolve,reject) => {
-      this._client.droplets.create(params, (err,result) => {
+      this._client.droplets.create(params,(err,result) => {
         if (err) reject(err)
         if (result.length > 1) {
           var ids = []
@@ -69,7 +69,7 @@ class Droplets {
    */
   listKernels(id) {
     return new Promise((resolve,reject) => {
-      this._client.droplets.kernels(id, (err,result) => {
+      this._client.droplets.kernels(id,(err,result) => {
         if (err) reject(err)
         console.log(result)
         resolve(result)
@@ -84,7 +84,7 @@ class Droplets {
    */
   listSnapshots(id) {
     return new Promise((resolve,reject) => {
-      this._client.droplets.snapshots(id, (err,result) => {
+      this._client.droplets.snapshots(id,(err,result) => {
         if (err) reject(err)
         console.log(result)
         resolve(result)
@@ -99,7 +99,7 @@ class Droplets {
    */
   listBackups(id) {
     return new Promise((resolve,reject) => {
-      this._client.droplets.backups(id, (err,result) => {
+      this._client.droplets.backups(id,(err,result) => {
         if (err) reject(err)
         console.log(result)
         resolve(result)
@@ -114,7 +114,7 @@ class Droplets {
    */
   listActions(id) {
     return new Promise((resolve,reject) => {
-      this._client.droplets.listActions(id, (err,result) => {
+      this._client.droplets.listActions(id,(err,result) => {
         if (err) reject(err)
         console.log(result)
         resolve(result)
@@ -129,7 +129,7 @@ class Droplets {
    */
   delete(id) {
     return new Promise((resolve,reject) => {
-      this._client.droplets.delete(id, (err,result) => {
+      this._client.droplets.delete(id,(err,result) => {
         if (err) reject(err)
         resolve("Droplet with id: " + id + " deleted successfully")
       })
@@ -143,7 +143,7 @@ class Droplets {
    */
   deleteByTag(tag) {
     return new Promise((resolve,reject) => {
-      this._client.droplets.delete(tag, (err,result) => {
+      this._client.droplets.delete(tag,(err,result) => {
         if (err) reject(err)
         resolve("Droplet with id: " + tag + " deleted successfully")
       })
@@ -157,7 +157,7 @@ class Droplets {
    */
   listNeighbors(id) {
     return new Promise((resolve,reject) => {
-      this._client.droplets.neighbors(id, (err,result) => {
+      this._client.droplets.neighbors(id,(err,result) => {
         if (err) reject(err)
         console.log(result)
         resolve(result)

@@ -1,5 +1,6 @@
 const Droplets = require('./compute/do-droplets')
 const Volumes = require('./storage/do-volumes')
+const LoadBalancers = require('./networking/do-load-balancers')
 
 class DO {
 	/**
@@ -14,11 +15,12 @@ class DO {
 			getSDK: () => this._DO,
 			getToken: () => this._doToken,
       droplets: this.Droplets,
-      volumes: this.Volumes
+      volumes: this.Volumes,
+      loadbalancers: this.LoadBalancers
 		};
 	}
 	/**
-   * Droplets Wrapper
+   * Compute - Droplets Wrapper
    * @Droplets
    */
   Droplets() {
@@ -26,11 +28,19 @@ class DO {
   }
 
   /**
-   * Volumes Wrapper
+   * Storage - Volumes Wrapper
    * @Volumes
    */
   Volumes() {
     return new Volumes(this.getSDK(), this.getToken());
+  }
+
+  /**
+   * Networking - Load Balancers Wrapper
+   * @LoadBalancers
+   */
+  LoadBalancers() {
+    return new LoadBalancers(this.getSDK(), this.getToken());
   }
 }
 
