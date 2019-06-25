@@ -7,8 +7,8 @@ class DO {
    * Expose DigitalOcean APIs
    * @constructor
    */
-  constructor(options,doSDK) {
-		this._doToken = options.token;
+  constructor(token,doSDK) {
+		this._doToken = token;
 		this._DO = doSDK;
 
 		return {
