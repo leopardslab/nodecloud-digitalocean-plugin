@@ -1,17 +1,11 @@
 # nodecloud-digitalocean-plugin
 DigitalOcean plugin for [nodecloud](https://github.com/cloudlibz/nodecloud)
 
-
-## Install
 ## 🚀 Install
 
-
-```
 ```
 $ npm install nodecloud-digitalocean-plugin
 ```
-```
-
 
 ## ✌️ How to setup
 
