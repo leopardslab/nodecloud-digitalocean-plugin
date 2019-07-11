@@ -1,6 +1,6 @@
-class Volumes {
+class FloatingIps {
   /**
-   * Volumes constructor
+   * Floating IPs constructor
    * @constructor
    * @param {object} doSdk - DigitalOcean SDK
    * @param {string} token - DigitalOcean token
@@ -11,12 +11,12 @@ class Volumes {
   }
 
   /**
-   * List all Volumes
+   * List all Floating IPs
    * @list
    */
   list() {
     return new Promise((resolve,reject) => {
-      this._client.volumes.list((err,result) => {
+      this._client.floatingIps.list((err,result) => {
         if (err) reject(err)
         console.log(result)
         resolve(result)
@@ -25,13 +25,13 @@ class Volumes {
   }
 
   /**
-   * Retrieve an existing Volume by id
-   * @listByID
+   * Retrieve an existing Floating IP by IP
+   * @listByIP
    * @param {string} id
    */
-  listByID(id) {
+  listByIP(ip) {
     return new Promise((resolve,reject) => {
-      this._client.volumes.get(id,(err,result) => {
+      this._client.floatingIps.get(ip,(err,result) => {
         if (err) reject(err)
         console.log(result)
         resolve(result)
@@ -40,41 +40,42 @@ class Volumes {
   }
 
   /**
-   * Create a Volume
+   * Create a Floating IP
    * @create
    * @param {object} params
    */
   create(params) {
     return new Promise((resolve,reject) => {
-      this._client.volumes.create(params,(err,result) => {
+      this._client.floatingIps.create(params,(err,result) => {
         if (err) reject(err)
-        resolve("Created a new volume with id: " + result.id)
+        resolve("Created a new Floating IP with IP: " + result.ip)
       })
     });
   }
 
   /**
-   * Delete a Volume
+   * Delete a Floating IP
    * @delete
-   * @param {string} id
+   * @param {string} ip
    */
-  delete(id) {
+  delete(ip) {
     return new Promise((resolve,reject) => {
-      this._client.volumes.delete(id,(err,result) => {
+      this._client.floatingIps.delete(ip,(err,result) => {
         if (err) reject(err)
-        resolve("Volume with id: " + id + " deleted successfully")
+        console.log(result)
+        resolve("Floating IP with id: " + ip + " deleted successfully")
       })
     });
   }
 
   /**
-   * List actions for a Volume
+   * List actions for a Floating IP
    * @listActions
-   * @param {string} id
+   * @param {string} ip
    */
-  listActions(id) {
+  listActions(ip) {
     return new Promise((resolve,reject) => {
-      this._client.volumes.listActions(id,(err,result) => {
+      this._client.floatingIps.listActions(ip,(err,result) => {
         if (err) reject(err)
         console.log(result)
         resolve(result)
@@ -83,20 +84,21 @@ class Volumes {
   }
 
   /**
-   * Get action for a Volume
+   * Get action for a Floating IP
    * @getAction
-   * @param {string} id
+   * @param {string} ip
    * @param {string} aid
    */
-  getAction(id, aid) {
+  getAction(ip,aid) {
     return new Promise((resolve,reject) => {
-      this._client.volumes.getAction(id,aid,(err,result) => {
+      this._client.floatingIps.getAction(ip,aid,(err,result) => {
         if (err) reject(err)
         console.log(result)
         resolve(result)
       })
     });
   }
+
 }
 
-module.exports = Volumes;
+module.exports = FloatingIps;

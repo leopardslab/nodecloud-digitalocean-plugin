@@ -93,7 +93,7 @@ class Account {
     return new Promise((resolve,reject) => {
       this._client.account.deleteSshKey(id,(err,result) => {
         if (err) reject(err)
-        resolve("Load Balancer with id: " + id + " deleted successfully")
+        resolve("SSH Key with id: " + id + " deleted successfully")
       })
     });
   }
