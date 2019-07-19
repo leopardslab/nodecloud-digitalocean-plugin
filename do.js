@@ -16,51 +16,51 @@ class DO {
 		return {
 			getSDK: () => this._DO,
       getToken: () => this._doToken,
-      account: this.Account,
-      droplets: this.Droplets,
-      loadbalancers: this.LoadBalancers,
-      floatingips: this.FloatingIps,
-      volumes: this.Volumes
+      account: this.account,
+      droplets: this.droplets,
+      loadbalancers: this.loadBalancers,
+      floatingips: this.floatingIps,
+      volumes: this.volumes
 		};
   }
 
   /**
    * Account - Account & SSH Wrapper
-   * @Account
+   * @account
    */
-  Account() {
+  account() {
     return new Account(this.getSDK(), this.getToken());
   }
 
 	/**
    * Compute - Droplets Wrapper
-   * @Droplets
+   * @droplets
    */
-  Droplets() {
+  droplets() {
     return new Droplets(this.getSDK(), this.getToken());
   }
 
   /**
    * Networking - Load Balancers Wrapper
-   * @LoadBalancers
+   * @loadBalancers
    */
-  LoadBalancers() {
+  loadBalancers() {
     return new LoadBalancers(this.getSDK(), this.getToken());
   }
 
   /**
    * Networking - Floating IPs Wrapper
-   * @FloatingIps
+   * @floatingIps
    */
-  FloatingIps() {
+  floatingIps() {
     return new FloatingIps(this.getSDK(), this.getToken());
   }
 
   /**
    * Storage - Volumes Wrapper
-   * @Volumes
+   * @volumes
    */
-  Volumes() {
+  volumes() {
     return new Volumes(this.getSDK(), this.getToken());
   }
 }
