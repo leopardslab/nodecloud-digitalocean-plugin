@@ -18,7 +18,6 @@ class Volumes {
     return new Promise((resolve,reject) => {
       this._client.volumes.list((err,result) => {
         if (err) reject(err)
-        console.log(result)
         resolve(result)
       })
     });
@@ -33,7 +32,6 @@ class Volumes {
     return new Promise((resolve,reject) => {
       this._client.volumes.get(id,(err,result) => {
         if (err) reject(err)
-        console.log(result)
         resolve(result)
       })
     });
@@ -76,7 +74,6 @@ class Volumes {
     return new Promise((resolve,reject) => {
       this._client.volumes.listActions(id,(err,result) => {
         if (err) reject(err)
-        console.log(result)
         resolve(result)
       })
     });
@@ -92,7 +89,6 @@ class Volumes {
     return new Promise((resolve,reject) => {
       this._client.volumes.getAction(id,aid,(err,result) => {
         if (err) reject(err)
-        console.log(result)
         resolve(result)
       })
     });

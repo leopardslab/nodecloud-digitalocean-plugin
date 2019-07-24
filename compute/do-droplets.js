@@ -18,7 +18,6 @@ class Droplets {
     return new Promise((resolve,reject) => {
       this._client.droplets.list((err,result) => {
         if (err) reject(err)
-        console.log(result)
         resolve(result)
       })
     });
@@ -33,7 +32,6 @@ class Droplets {
     return new Promise((resolve,reject) => {
       this._client.droplets.get(id,(err,result) => {
         if (err) reject(err)
-        console.log(result)
         resolve(result)
       })
     });
@@ -71,7 +69,6 @@ class Droplets {
     return new Promise((resolve,reject) => {
       this._client.droplets.kernels(id,(err,result) => {
         if (err) reject(err)
-        console.log(result)
         resolve(result)
       })
     });
@@ -86,7 +83,6 @@ class Droplets {
     return new Promise((resolve,reject) => {
       this._client.droplets.snapshots(id,(err,result) => {
         if (err) reject(err)
-        console.log(result)
         resolve(result)
       })
     });
@@ -100,8 +96,7 @@ class Droplets {
   listBackups(id) {
     return new Promise((resolve,reject) => {
       this._client.droplets.backups(id,(err,result) => {
-        if (err) reject(err)
-        console.log(result)
+        if (err) reject(err)  
         resolve(result)
       })
     });
@@ -116,7 +111,6 @@ class Droplets {
     return new Promise((resolve,reject) => {
       this._client.droplets.listActions(id,(err,result) => {
         if (err) reject(err)
-        console.log(result)
         resolve(result)
       })
     });
@@ -159,7 +153,6 @@ class Droplets {
     return new Promise((resolve,reject) => {
       this._client.droplets.neighbors(id,(err,result) => {
         if (err) reject(err)
-        console.log(result)
         resolve(result)
       })
     });

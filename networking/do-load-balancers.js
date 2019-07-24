@@ -18,7 +18,6 @@ class LoadBalancers {
     return new Promise((resolve,reject) => {
       this._client.loadBalancers.list((err,result) => {
         if (err) reject(err)
-        console.log(result)
         resolve(result)
       })
     });
@@ -33,7 +32,6 @@ class LoadBalancers {
     return new Promise((resolve,reject) => {
       this._client.loadBalancers.get(id,(err,result) => {
         if (err) reject(err)
-        console.log(result)
         resolve(result)
       })
     });
@@ -49,7 +47,6 @@ class LoadBalancers {
     return new Promise((resolve,reject) => {
       this._client.loadBalancers.add(id,params,(err,result) => {
         if (err) reject(err)
-        console.log(result)
         resolve(result)
       })
     });
@@ -65,7 +62,6 @@ class LoadBalancers {
     return new Promise((resolve,reject) => {
       this._client.loadBalancers.remove(id,params,(err,result) => {
         if (err) reject(err)
-        console.log(result)
         resolve(result)
       })
     });
@@ -81,7 +77,6 @@ class LoadBalancers {
     return new Promise((resolve,reject) => {
       this._client.loadBalancers.update(id,params,(err,result) => {
         if (err) reject(err)
-        console.log(result)
         resolve(result)
       })
     });
@@ -111,7 +106,6 @@ class LoadBalancers {
     return new Promise((resolve,reject) => {
       this._client.loadBalancers.createForwardingRules(id,params,(err,result) => {
         if (err) reject(err)
-        console.log(result)
         resolve(result)
       })
     });
@@ -127,7 +121,6 @@ class LoadBalancers {
     return new Promise((resolve,reject) => {
       this._client.loadBalancers.deleteForwardingRules(id,params,(err,result) => {
         if (err) reject(err)
-        console.log(result)
         resolve(result)
       })
     });

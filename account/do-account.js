@@ -18,7 +18,6 @@ class Account {
     return new Promise((resolve,reject) => {
       this._client.account.get((err,result) => {
         if (err) reject(err)
-        console.log(result)
         resolve(result)
       })
     });
@@ -32,7 +31,6 @@ class Account {
     return new Promise((resolve,reject) => {
       this._client.account.listSshKeys((err,result) => {
         if (err) reject(err)
-        console.log(result)
         resolve(result)
       })
     });
@@ -47,7 +45,6 @@ class Account {
     return new Promise((resolve,reject) => {
       this._client.account.getSshKey(id,(err,result) => {
         if (err) reject(err)
-        console.log(result)
         resolve(result)
       })
     });
@@ -61,8 +58,7 @@ class Account {
   createSshKey(params) {
     return new Promise((resolve,reject) => {
       this._client.account.createSshKey(params,(err,result) => {
-        if (err) reject(err)
-        console.log(result)
+        if (err) reject(err) 
         resolve(result)
       })
     });
@@ -78,7 +74,6 @@ class Account {
     return new Promise((resolve,reject) => {
       this._client.account.updateSshKey(id,params,(err,result) => {
         if (err) reject(err)
-        console.log(result)
         resolve(result)
       })
     });

@@ -18,7 +18,6 @@ class FloatingIps {
     return new Promise((resolve,reject) => {
       this._client.floatingIps.list((err,result) => {
         if (err) reject(err)
-        console.log(result)
         resolve(result)
       })
     });
@@ -33,7 +32,6 @@ class FloatingIps {
     return new Promise((resolve,reject) => {
       this._client.floatingIps.get(ip,(err,result) => {
         if (err) reject(err)
-        console.log(result)
         resolve(result)
       })
     });
@@ -62,7 +60,6 @@ class FloatingIps {
     return new Promise((resolve,reject) => {
       this._client.floatingIps.delete(ip,(err,result) => {
         if (err) reject(err)
-        console.log(result)
         resolve("Floating IP with id: " + ip + " deleted successfully")
       })
     });
@@ -77,7 +74,6 @@ class FloatingIps {
     return new Promise((resolve,reject) => {
       this._client.floatingIps.listActions(ip,(err,result) => {
         if (err) reject(err)
-        console.log(result)
         resolve(result)
       })
     });
@@ -93,7 +89,6 @@ class FloatingIps {
     return new Promise((resolve,reject) => {
       this._client.floatingIps.getAction(ip,aid,(err,result) => {
         if (err) reject(err)
-        console.log(result)
         resolve(result)
       })
     });
