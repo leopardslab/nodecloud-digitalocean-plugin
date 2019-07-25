@@ -1,0 +1,19 @@
+{
+  "name": "nodecloud-do-plugin",
+  "version": "1.0.0",
+  "description": "DigitalOcean Wrapper for NodeCloud Core",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodecloud",
+    "nodecloud-do",
+    "nodecloud-core"
+  ],
+  "author": "Scorelab",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "digitalocean": "^1.2.0"
+  }
+}
