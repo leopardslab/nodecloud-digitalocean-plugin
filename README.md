@@ -20,7 +20,7 @@ It is an array of supported providers.
 1.  `name` : Provider name which nodecloud supports.
 2.  `tag` : Name that you will use to load the given provider. It is for your reference in code. It can be anything that you may like.
 3.  `plugin` : Library name which has to be installed before loading a provider.
-4.  `configPath`: An object which contains a key called 'token' with you DigitalOcean token as the value
+4.  `configPath`: An object which contains a key called 'token' with your DigitalOcean token as the value
 
 Config file can contain array of objects for all providers and all will be loaded.
 Supported values for `name` : azure, google, aws, digitalocean
