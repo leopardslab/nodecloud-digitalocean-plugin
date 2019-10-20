@@ -11,8 +11,8 @@ class DO {
    */
   constructor(token,doSDK) {
 		this._doToken = token;
-		this._DO = doSDK;
-
+    this._DO = doSDK;
+    
 		return {
 			getSDK: () => this._DO,
       getToken: () => this._doToken,

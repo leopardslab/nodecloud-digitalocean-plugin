@@ -1,19 +1,26 @@
 {
   "name": "nodecloud-do-plugin",
   "version": "1.0.0",
-  "description": "DigitalOcean Wrapper for NodeCloud Core",
+  "description": "DigitalOcean Plugin for Nodecloud Core",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [
     "nodecloud",
     "nodecloud-do",
     "nodecloud-core"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cloudlibz/nodecloud-digitalocean-plugin"
+  },
   "author": "Scorelab",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "dependencies": {
     "digitalocean": "^1.2.0"
+  },
+  "devDependencies": {
+    "jest": "^24.8.0"
   }
 }

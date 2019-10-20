@@ -5,7 +5,7 @@ class LoadBalancers {
    * @param {object} doSdk - DigitalOcean SDK
    * @param {string} token - DigitalOcean token
    */
-  constructor(doSdk, token) {
+  constructor(doSdk,token) {
     this._DO = doSdk;
     this._client = new this._DO.client(token);
   }
