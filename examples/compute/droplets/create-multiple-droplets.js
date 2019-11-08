@@ -9,14 +9,11 @@ const ncProviders = nodeCloud.getProviders(optionsProvider);
 const droplets = ncProviders.digitalocean.droplets();
 
 const params = {
-  "names": [
-    "sub-01.example.com",
-    "sub-02.example.com"
-  ],
-  "region": "nyc3",
-  "size": "s-1vcpu-1gb",
-  "image": "ubuntu-16-04-x64"
-}
+  names: ["sub-01.example.com", "sub-02.example.com"],
+  region: "nyc3",
+  size: "s-1vcpu-1gb",
+  image: "ubuntu-16-04-x64"
+};
 
 droplets
   .create(params)

@@ -4,7 +4,8 @@
   "description": "DigitalOcean Plugin for Nodecloud Core",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "prettier": "prettier --write '**/*.js'"
   },
   "keywords": [
     "nodecloud",
@@ -15,12 +16,20 @@
     "type": "git",
     "url": "https://github.com/cloudlibz/nodecloud-digitalocean-plugin"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
   "author": "Scorelab",
   "license": "MIT",
   "dependencies": {
     "digitalocean": "^1.2.0"
   },
   "devDependencies": {
-    "jest": "^24.8.0"
+    "husky": "^3.0.9",
+    "jest": "^24.8.0",
+    "prettier": "1.18.2",
+    "pretty-quick": "^2.0.1"
   }
 }

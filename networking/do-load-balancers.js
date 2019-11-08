@@ -5,7 +5,7 @@ class LoadBalancers {
    * @param {object} doSdk - DigitalOcean SDK
    * @param {string} token - DigitalOcean token
    */
-  constructor(doSdk,token) {
+  constructor(doSdk, token) {
     this._DO = doSdk;
     this._client = new this._DO.client(token);
   }
@@ -15,11 +15,11 @@ class LoadBalancers {
    * @list
    */
   list() {
-    return new Promise((resolve,reject) => {
-      this._client.loadBalancers.list((err,result) => {
-        if (err) reject(err)
-        resolve(result)
-      })
+    return new Promise((resolve, reject) => {
+      this._client.loadBalancers.list((err, result) => {
+        if (err) reject(err);
+        resolve(result);
+      });
     });
   }
 
@@ -29,11 +29,11 @@ class LoadBalancers {
    * @param {string} id
    */
   listByID(id) {
-    return new Promise((resolve,reject) => {
-      this._client.loadBalancers.get(id,(err,result) => {
-        if (err) reject(err)
-        resolve(result)
-      })
+    return new Promise((resolve, reject) => {
+      this._client.loadBalancers.get(id, (err, result) => {
+        if (err) reject(err);
+        resolve(result);
+      });
     });
   }
 
@@ -43,12 +43,12 @@ class LoadBalancers {
    * @param {string} id
    * @param {object} params
    */
-  add(id,params) {
-    return new Promise((resolve,reject) => {
-      this._client.loadBalancers.add(id,params,(err,result) => {
-        if (err) reject(err)
-        resolve(result)
-      })
+  add(id, params) {
+    return new Promise((resolve, reject) => {
+      this._client.loadBalancers.add(id, params, (err, result) => {
+        if (err) reject(err);
+        resolve(result);
+      });
     });
   }
 
@@ -58,12 +58,12 @@ class LoadBalancers {
    * @param {string} id
    * @param {object} params
    */
-  remove(id,params) {
-    return new Promise((resolve,reject) => {
-      this._client.loadBalancers.remove(id,params,(err,result) => {
-        if (err) reject(err)
-        resolve(result)
-      })
+  remove(id, params) {
+    return new Promise((resolve, reject) => {
+      this._client.loadBalancers.remove(id, params, (err, result) => {
+        if (err) reject(err);
+        resolve(result);
+      });
     });
   }
 
@@ -73,12 +73,12 @@ class LoadBalancers {
    * @param {string} id
    * @param {object} params
    */
-  update(id,params) {
-    return new Promise((resolve,reject) => {
-      this._client.loadBalancers.update(id,params,(err,result) => {
-        if (err) reject(err)
-        resolve(result)
-      })
+  update(id, params) {
+    return new Promise((resolve, reject) => {
+      this._client.loadBalancers.update(id, params, (err, result) => {
+        if (err) reject(err);
+        resolve(result);
+      });
     });
   }
 
@@ -88,11 +88,11 @@ class LoadBalancers {
    * @param {string} id
    */
   delete(id) {
-    return new Promise((resolve,reject) => {
-      this._client.loadBalancers.delete(id,(err,result) => {
-        if (err) reject(err)
-        resolve("Load Balancer with id: " + id + " deleted successfully")
-      })
+    return new Promise((resolve, reject) => {
+      this._client.loadBalancers.delete(id, (err, result) => {
+        if (err) reject(err);
+        resolve("Load Balancer with id: " + id + " deleted successfully");
+      });
     });
   }
 
@@ -102,12 +102,16 @@ class LoadBalancers {
    * @param {string} id
    * @param {object} params
    */
-  createForwardingRules(id,params) {
-    return new Promise((resolve,reject) => {
-      this._client.loadBalancers.createForwardingRules(id,params,(err,result) => {
-        if (err) reject(err)
-        resolve(result)
-      })
+  createForwardingRules(id, params) {
+    return new Promise((resolve, reject) => {
+      this._client.loadBalancers.createForwardingRules(
+        id,
+        params,
+        (err, result) => {
+          if (err) reject(err);
+          resolve(result);
+        }
+      );
     });
   }
 
@@ -117,15 +121,18 @@ class LoadBalancers {
    * @param {string} id
    * @param {object} params
    */
-  deleteForwardingRules(id,params) {
-    return new Promise((resolve,reject) => {
-      this._client.loadBalancers.deleteForwardingRules(id,params,(err,result) => {
-        if (err) reject(err)
-        resolve(result)
-      })
+  deleteForwardingRules(id, params) {
+    return new Promise((resolve, reject) => {
+      this._client.loadBalancers.deleteForwardingRules(
+        id,
+        params,
+        (err, result) => {
+          if (err) reject(err);
+          resolve(result);
+        }
+      );
     });
   }
-
 }
 
 module.exports = LoadBalancers;
