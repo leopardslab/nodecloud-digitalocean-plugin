@@ -15,11 +15,11 @@ class Droplets {
    * @list
    */
   list() {
-    return new Promise((resolve,reject) => {
-      this._client.droplets.list((err,result) => {
-        if (err) reject(err)
-        resolve(result)
-      })
+    return new Promise((resolve, reject) => {
+      this._client.droplets.list((err, result) => {
+        if (err) reject(err);
+        resolve(result);
+      });
     });
   }
 
@@ -29,11 +29,11 @@ class Droplets {
    * @param {string} id
    */
   listByID(id) {
-    return new Promise((resolve,reject) => {
-      this._client.droplets.get(id,(err,result) => {
-        if (err) reject(err)
-        resolve(result)
-      })
+    return new Promise((resolve, reject) => {
+      this._client.droplets.get(id, (err, result) => {
+        if (err) reject(err);
+        resolve(result);
+      });
     });
   }
 
@@ -43,20 +43,19 @@ class Droplets {
    * @param {object} params
    */
   create(params) {
-    return new Promise((resolve,reject) => {
-      this._client.droplets.create(params,(err,result) => {
-        if (err) reject(err)
+    return new Promise((resolve, reject) => {
+      this._client.droplets.create(params, (err, result) => {
+        if (err) reject(err);
         if (result.length > 1) {
-          var ids = []
-          for (var i=0; i<result.length; i++) {
-            ids.push(result[i].id)
+          var ids = [];
+          for (var i = 0; i < result.length; i++) {
+            ids.push(result[i].id);
           }
-          resolve("Created new droplets with ids: " + ids)
+          resolve("Created new droplets with ids: " + ids);
+        } else {
+          resolve("Created a new droplet with id: " + result.id);
         }
-        else {
-          resolve("Created a new droplet with id: " + result.id)
-        }
-      })
+      });
     });
   }
 
@@ -66,11 +65,11 @@ class Droplets {
    * @param {string} id
    */
   listKernels(id) {
-    return new Promise((resolve,reject) => {
-      this._client.droplets.kernels(id,(err,result) => {
-        if (err) reject(err)
-        resolve(result)
-      })
+    return new Promise((resolve, reject) => {
+      this._client.droplets.kernels(id, (err, result) => {
+        if (err) reject(err);
+        resolve(result);
+      });
     });
   }
 
@@ -80,11 +79,11 @@ class Droplets {
    * @param {string} id
    */
   listSnapshots(id) {
-    return new Promise((resolve,reject) => {
-      this._client.droplets.snapshots(id,(err,result) => {
-        if (err) reject(err)
-        resolve(result)
-      })
+    return new Promise((resolve, reject) => {
+      this._client.droplets.snapshots(id, (err, result) => {
+        if (err) reject(err);
+        resolve(result);
+      });
     });
   }
 
@@ -94,25 +93,25 @@ class Droplets {
    * @param {string} id
    */
   listBackups(id) {
-    return new Promise((resolve,reject) => {
-      this._client.droplets.backups(id,(err,result) => {
-        if (err) reject(err)  
-        resolve(result)
-      })
+    return new Promise((resolve, reject) => {
+      this._client.droplets.backups(id, (err, result) => {
+        if (err) reject(err);
+        resolve(result);
+      });
     });
   }
-  
+
   /**
    * List actions for a Droplet
    * @listActions
    * @param {string} id
    */
   listActions(id) {
-    return new Promise((resolve,reject) => {
-      this._client.droplets.listActions(id,(err,result) => {
-        if (err) reject(err)
-        resolve(result)
-      })
+    return new Promise((resolve, reject) => {
+      this._client.droplets.listActions(id, (err, result) => {
+        if (err) reject(err);
+        resolve(result);
+      });
     });
   }
 
@@ -122,11 +121,11 @@ class Droplets {
    * @param {string} id
    */
   delete(id) {
-    return new Promise((resolve,reject) => {
-      this._client.droplets.delete(id,(err,result) => {
-        if (err) reject(err)
-        resolve("Droplet with id: " + id + " deleted successfully")
-      })
+    return new Promise((resolve, reject) => {
+      this._client.droplets.delete(id, (err, result) => {
+        if (err) reject(err);
+        resolve("Droplet with id: " + id + " deleted successfully");
+      });
     });
   }
 
@@ -136,11 +135,11 @@ class Droplets {
    * @param {string} tag
    */
   deleteByTag(tag) {
-    return new Promise((resolve,reject) => {
-      this._client.droplets.delete(tag,(err,result) => {
-        if (err) reject(err)
-        resolve("Droplet with id: " + tag + " deleted successfully")
-      })
+    return new Promise((resolve, reject) => {
+      this._client.droplets.delete(tag, (err, result) => {
+        if (err) reject(err);
+        resolve("Droplet with id: " + tag + " deleted successfully");
+      });
     });
   }
 
@@ -150,11 +149,11 @@ class Droplets {
    * @param {string} id
    */
   listNeighbors(id) {
-    return new Promise((resolve,reject) => {
-      this._client.droplets.neighbors(id,(err,result) => {
-        if (err) reject(err)
-        resolve(result)
-      })
+    return new Promise((resolve, reject) => {
+      this._client.droplets.neighbors(id, (err, result) => {
+        if (err) reject(err);
+        resolve(result);
+      });
     });
   }
 }

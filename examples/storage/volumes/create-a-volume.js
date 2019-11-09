@@ -9,11 +9,11 @@ const ncProviders = nodeCloud.getProviders(optionsProvider);
 const volumes = ncProviders.digitalocean.volumes();
 
 const params = {
-  "size_gigabytes": 10,
-  "name": "example",
-  "description": "Block store for examples",
-  "region": "nyc1"
-}
+  size_gigabytes: 10,
+  name: "example",
+  description: "Block store for examples",
+  region: "nyc1"
+};
 
 volumes
   .create(params)

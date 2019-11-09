@@ -1,27 +1,27 @@
-const Account = require('./account/do-account')
-const Droplets = require('./compute/do-droplets')
-const LoadBalancers = require('./networking/do-load-balancers')
-const FloatingIps = require('./networking/do-floating-ips')
-const Volumes = require('./storage/do-volumes')
+const Account = require("./account/do-account");
+const Droplets = require("./compute/do-droplets");
+const LoadBalancers = require("./networking/do-load-balancers");
+const FloatingIps = require("./networking/do-floating-ips");
+const Volumes = require("./storage/do-volumes");
 
 class DO {
-	/**
+  /**
    * Expose DigitalOcean APIs
    * @constructor
    */
-  constructor(token,doSDK) {
-		this._doToken = token;
-		this._DO = doSDK;
+  constructor(token, doSDK) {
+    this._doToken = token;
+    this._DO = doSDK;
 
-		return {
-			getSDK: () => this._DO,
+    return {
+      getSDK: () => this._DO,
       getToken: () => this._doToken,
       account: this.account,
       droplets: this.droplets,
       loadbalancers: this.loadBalancers,
       floatingips: this.floatingIps,
       volumes: this.volumes
-		};
+    };
   }
 
   /**
@@ -32,7 +32,7 @@ class DO {
     return new Account(this.getSDK(), this.getToken());
   }
 
-	/**
+  /**
    * Compute - Droplets Wrapper
    * @droplets
    */

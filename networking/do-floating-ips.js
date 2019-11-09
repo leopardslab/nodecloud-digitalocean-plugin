@@ -15,11 +15,11 @@ class FloatingIps {
    * @list
    */
   list() {
-    return new Promise((resolve,reject) => {
-      this._client.floatingIps.list((err,result) => {
-        if (err) reject(err)
-        resolve(result)
-      })
+    return new Promise((resolve, reject) => {
+      this._client.floatingIps.list((err, result) => {
+        if (err) reject(err);
+        resolve(result);
+      });
     });
   }
 
@@ -29,11 +29,11 @@ class FloatingIps {
    * @param {string} id
    */
   listByIP(ip) {
-    return new Promise((resolve,reject) => {
-      this._client.floatingIps.get(ip,(err,result) => {
-        if (err) reject(err)
-        resolve(result)
-      })
+    return new Promise((resolve, reject) => {
+      this._client.floatingIps.get(ip, (err, result) => {
+        if (err) reject(err);
+        resolve(result);
+      });
     });
   }
 
@@ -43,11 +43,11 @@ class FloatingIps {
    * @param {object} params
    */
   create(params) {
-    return new Promise((resolve,reject) => {
-      this._client.floatingIps.create(params,(err,result) => {
-        if (err) reject(err)
-        resolve("Created a new Floating IP with IP: " + result.ip)
-      })
+    return new Promise((resolve, reject) => {
+      this._client.floatingIps.create(params, (err, result) => {
+        if (err) reject(err);
+        resolve("Created a new Floating IP with IP: " + result.ip);
+      });
     });
   }
 
@@ -57,11 +57,11 @@ class FloatingIps {
    * @param {string} ip
    */
   delete(ip) {
-    return new Promise((resolve,reject) => {
-      this._client.floatingIps.delete(ip,(err,result) => {
-        if (err) reject(err)
-        resolve("Floating IP with id: " + ip + " deleted successfully")
-      })
+    return new Promise((resolve, reject) => {
+      this._client.floatingIps.delete(ip, (err, result) => {
+        if (err) reject(err);
+        resolve("Floating IP with id: " + ip + " deleted successfully");
+      });
     });
   }
 
@@ -71,11 +71,11 @@ class FloatingIps {
    * @param {string} ip
    */
   listActions(ip) {
-    return new Promise((resolve,reject) => {
-      this._client.floatingIps.listActions(ip,(err,result) => {
-        if (err) reject(err)
-        resolve(result)
-      })
+    return new Promise((resolve, reject) => {
+      this._client.floatingIps.listActions(ip, (err, result) => {
+        if (err) reject(err);
+        resolve(result);
+      });
     });
   }
 
@@ -85,15 +85,14 @@ class FloatingIps {
    * @param {string} ip
    * @param {string} aid
    */
-  getAction(ip,aid) {
-    return new Promise((resolve,reject) => {
-      this._client.floatingIps.getAction(ip,aid,(err,result) => {
-        if (err) reject(err)
-        resolve(result)
-      })
+  getAction(ip, aid) {
+    return new Promise((resolve, reject) => {
+      this._client.floatingIps.getAction(ip, aid, (err, result) => {
+        if (err) reject(err);
+        resolve(result);
+      });
     });
   }
-
 }
 
 module.exports = FloatingIps;
