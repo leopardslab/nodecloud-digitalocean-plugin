@@ -23,9 +23,11 @@ It is an array of supported providers.
 4.  `configPath`: An object which contains a key called 'token' with your DigitalOcean token as the value
 
 Config file can contain array of objects for all providers and all will be loaded.
-Supported values for `name` : azure, google, aws, digitalocean
+Supported values for `name` : aws, azure, alicloud, digitalocean, google
 
 ```js
+const nodeCloudDigitalOceanPlugin = require('nodecloud-digitalocean-plugin');
+
 const providers = [
   {
     name: "digitalocean",
