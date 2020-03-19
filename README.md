@@ -47,7 +47,12 @@ module.exports = providers;
 $ git clone https://github.com/cloudlibz/nodecloud-digitalocean-plugin
 $ cd nodecloud-digitalocean-plugin
 $ npm link
+$ cd .. && mkdir nodecloud-dev && cd nodecloud-dev
+$ npm link nodecloud-digitalocean-plugin
+$ cd .. && git clone https://github.com/cloudliz/nodecloud
 $ git clone https://github.com/cloudliz/nodecloud
 $ cd nodecloud
-$ npm link nodecloud-digitalocean-plugin
+$ npm link
+$ cd nodecloud-dev
+$ npm link nodecloud
 ```
